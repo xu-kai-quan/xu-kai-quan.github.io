@@ -2,11 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 小徐的博客</title>
-    <link>https://xkq-blog.top/</link>
+    <link>https://xkq-blog.top/posts/</link>
     <description>Recent content in Posts on 小徐的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 22 Dec 2020 16:48:33 +0800</lastBuildDate><atom:link href="https://xkq-blog.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Dec 2020 20:31:10 +0800</lastBuildDate><atom:link href="https://xkq-blog.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows如何用 hugo 搭建个人博客</title>
+      <link>https://xkq-blog.top/posts/windows%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Tue, 22 Dec 2020 20:31:10 +0800</pubDate>
+      
+      <guid>https://xkq-blog.top/posts/windows%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>在Windows中安装hugo   去 Hugo releases页面下载 hugo_xxx_Windows-64bit.zip
+  解压后把文件夹名改为 hugo ，在D盘新建 Software 文件夹，把 hugo 文件夹放到里面
+  把 D:\Software\hugo\ 加到环境变量 PATH 中
+  运行 hugo version 查看版本 （如果这一步不成功，那一定是2，3步没有弄好）
+  搭建博客   进入Hugo官网
+  从 Step 2 开始看，因为 Step 1 是安装 hugo ，不过文档给的安装方式是是 macOS 的，所以不用看。
+  先进入一个安全目录（存放你的博客），然后执行 Step 2里的 hugo new site quickstart，这里的quickstart 建议换成 你的github名字.github.io_generator (现在，假设我的github名字是XXX)
+  如果你听从了我的建议，那么接下来一个一个的运行下面的命令
+  cd XXX.github.io_generator git init git submodule add https://github.</description>
+    </item>
+    
     <item>
       <title>开博大吉</title>
       <link>https://xkq-blog.top/posts/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</link>

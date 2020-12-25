@@ -6,7 +6,28 @@
     <description>Recent content in Posts on 小徐的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 22 Dec 2020 20:31:10 +0800</lastBuildDate><atom:link href="https://xkq-blog.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Dec 2020 09:58:33 +0800</lastBuildDate><atom:link href="https://xkq-blog.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>初识Maven</title>
+      <link>https://xkq-blog.top/posts/%E5%88%9D%E8%AF%86maven/</link>
+      <pubDate>Wed, 23 Dec 2020 09:58:33 +0800</pubDate>
+      
+      <guid>https://xkq-blog.top/posts/%E5%88%9D%E8%AF%86maven/</guid>
+      <description>什么是Maven Maven被翻译为“专家”或“内行”，也可以被翻译成“知识的积累”。Maven是一跨平台的项目管理工具, 主要服务于基于Java平台的项目构建、依赖管理和项目信息管理
+什么是构建 在我们每天的工作中，除了编写源代码，还有相当一部分时间用来编译、运行单元测试、生成文档、打包和部署等烦琐的工作上，这就是构建。而Maven使得软件的构建像全自动流水线一样，只需要一条简单的命令，所有烦琐的步骤都能自动完成，帮助我们标准化构建过程。
+Maven是优秀的构建工具 Maven是跨平台的，它对外提供一致的操作接口，无论在Windows、Linux或是Mac上，都可以使用同样的命令
+我们一直在不停的寻找避免重复的方法。设计的重复、文档的重复、构建的重复，而Maven最大化的消除了构建的重复，抽象了一个完整的构建生命周期模型,并为绝大部分的构建任务提供了已实现的插件，我们也不需要去定义过程和去实现这些过程中的一些任务。
+例如测试，我们不用告诉Maven去测试和如何运行测试，我们只需要遵循Maven的约定编写好测试用例，当我们构建的时候，这些测试会自动运行。
+Maven不仅仅是构建工具 还是一个依赖管理工具和项目信息管理工具。
+依赖管理工具 在这个开源的年代里，几乎任何Java应用都会借用一些第三方的开源类库，这些类库都可通过依赖的方式引入到项目中来。随着依赖的增多，版本不一致、版本冲突、依赖臃肿等问题接踵而来。如果手动解决，那将是十分枯燥的。
+幸运的是Maven提供了一个优秀的解决方案。Maven为全世界的Java开发者提供了一个免费的中央仓库，在其中几乎可以找到任何的流行开源类库，通过一组坐标Maven能找到任何一个Java类库（如jar文件）并自动下载。
+ Maven给这个类库世界引入了经纬，让它们变得有秩序，于是我们借助它来有序地管理依赖，轻松的解决那些繁杂的依赖问题。
+ 项目信息管理工具 Mavne能帮助我们管理原本分散在项目中各个角落的项目信息，包括项目描述、开发者列表、版本控制系统地址、许可证、缺陷管理系统地址等。
+通过Mavne自动生成的站点和一些已有的插件，我们还能轻松获得项目文档、测试报告、静态分析报告、源码版本日志报告等非常具有价值的项目信息。
+使用Mavne的额外好处  Mavne对于项目目录结构、测试用例命名方式等内容都有既定的规则，只要遵循了这些成熟的规则，用户在项目间切换的时候就免去了额外的学习成本，可以说是约定优于配置（Convention Over Configuration）
+ </description>
+    </item>
+    
     <item>
       <title>Windows如何用 hugo 搭建个人博客</title>
       <link>https://xkq-blog.top/posts/windows%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>

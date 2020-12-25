@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>初识Maven | 小徐的博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="什么是Maven Maven被翻译为“专家”或“内行”，也可以被翻译成“知识的积累”。Maven是一跨平台的项目管理工具, 主要服务于基于Java平台的项目构建、依赖管理和项目信息管理
+什么是构建 在我们每天的工作中，除了编写源代码，还有相当一部分时间用来编译、运行单元测试、生成文档、打包和部署等烦琐的工作上，这就是构建。而Maven使得软件的构建像全自动流水线一样，只需要一条简单的命令，所有烦琐的步骤都能自动完成，帮助我们标准化构建过程。
+Maven是优秀的构建工具 Maven是跨平台的，它对外提供一致的操作接口，无论在Windows、Linux或是Mac上，都可以使用同样的命令
+我们一直在不停的寻找避免重复的方法。设计的重复、文档的重复、构建的重复，而Maven最大化的消除了构建的重复，抽象了一个完整的构建生命周期模型,并为绝大部分的构建任务提供了已实现的插件，我们也不需要去定义过程和去实现这些过程中的一些任务。
+例如测试，我们不用告诉Maven去测试和如何运行测试，我们只需要遵循Maven的约定编写好测试用例，当我们构建的时候，这些测试会自动运行。
+Maven不仅仅是构建工具 还是一个依赖管理工具和项目信息管理工具。
+依赖管理工具 在这个开源的年代里，几乎任何Java应用都会借用一些第三方的开源类库，这些类库都可通过依赖的方式引入到项目中来。随着依赖的增多，版本不一致、版本冲突、依赖臃肿等问题接踵而来。如果手动解决，那将是十分枯燥的。
+幸运的是Maven提供了一个优秀的解决方案。Maven为全世界的Java开发者提供了一个免费的中央仓库，在其中几乎可以找到任何的流行开源类库，通过一组坐标Maven能找到任何一个Java类库（如jar文件）并自动下载。
+ Maven给这个类库世界引入了经纬，让它们变得有秩序，于是我们借助它来有序地管理依赖，轻松的解决那些繁杂的依赖问题。
+ 项目信息管理工具 Mavne能帮助我们管理原本分散在项目中各个角落的项目信息，包括项目描述、开发者列表、版本控制系统地址、许可证、缺陷管理系统地址等。
+通过Mavne自动生成的站点和一些已有的插件，我们还能轻松获得项目文档、测试报告、静态分析报告、源码版本日志报告等非常具有价值的项目信息。
+使用Mavne的额外好处  Mavne对于项目目录结构、测试用例命名方式等内容都有既定的规则，只要遵循了这些成熟的规则，用户在项目间切换的时候就免去了额外的学习成本，可以说是约定优于配置（Convention Over Configuration）
+ ">
+    <meta name="generator" content="Hugo 0.79.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="初识Maven" />
+<meta property="og:description" content="什么是Maven Maven被翻译为“专家”或“内行”，也可以被翻译成“知识的积累”。Maven是一跨平台的项目管理工具, 主要服务于基于Java平台的项目构建、依赖管理和项目信息管理
+什么是构建 在我们每天的工作中，除了编写源代码，还有相当一部分时间用来编译、运行单元测试、生成文档、打包和部署等烦琐的工作上，这就是构建。而Maven使得软件的构建像全自动流水线一样，只需要一条简单的命令，所有烦琐的步骤都能自动完成，帮助我们标准化构建过程。
+Maven是优秀的构建工具 Maven是跨平台的，它对外提供一致的操作接口，无论在Windows、Linux或是Mac上，都可以使用同样的命令
+我们一直在不停的寻找避免重复的方法。设计的重复、文档的重复、构建的重复，而Maven最大化的消除了构建的重复，抽象了一个完整的构建生命周期模型,并为绝大部分的构建任务提供了已实现的插件，我们也不需要去定义过程和去实现这些过程中的一些任务。
+例如测试，我们不用告诉Maven去测试和如何运行测试，我们只需要遵循Maven的约定编写好测试用例，当我们构建的时候，这些测试会自动运行。
+Maven不仅仅是构建工具 还是一个依赖管理工具和项目信息管理工具。
+依赖管理工具 在这个开源的年代里，几乎任何Java应用都会借用一些第三方的开源类库，这些类库都可通过依赖的方式引入到项目中来。随着依赖的增多，版本不一致、版本冲突、依赖臃肿等问题接踵而来。如果手动解决，那将是十分枯燥的。
+幸运的是Maven提供了一个优秀的解决方案。Maven为全世界的Java开发者提供了一个免费的中央仓库，在其中几乎可以找到任何的流行开源类库，通过一组坐标Maven能找到任何一个Java类库（如jar文件）并自动下载。
+ Maven给这个类库世界引入了经纬，让它们变得有秩序，于是我们借助它来有序地管理依赖，轻松的解决那些繁杂的依赖问题。
+ 项目信息管理工具 Mavne能帮助我们管理原本分散在项目中各个角落的项目信息，包括项目描述、开发者列表、版本控制系统地址、许可证、缺陷管理系统地址等。
+通过Mavne自动生成的站点和一些已有的插件，我们还能轻松获得项目文档、测试报告、静态分析报告、源码版本日志报告等非常具有价值的项目信息。
+使用Mavne的额外好处  Mavne对于项目目录结构、测试用例命名方式等内容都有既定的规则，只要遵循了这些成熟的规则，用户在项目间切换的时候就免去了额外的学习成本，可以说是约定优于配置（Convention Over Configuration）
+ " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xkq-blog.top/posts/%E5%88%9D%E8%AF%86maven/" />
+<meta property="article:published_time" content="2020-12-23T09:58:33+08:00" />
+<meta property="article:modified_time" content="2020-12-23T09:58:33+08:00" />
+<meta itemprop="name" content="初识Maven">
+<meta itemprop="description" content="什么是Maven Maven被翻译为“专家”或“内行”，也可以被翻译成“知识的积累”。Maven是一跨平台的项目管理工具, 主要服务于基于Java平台的项目构建、依赖管理和项目信息管理
+什么是构建 在我们每天的工作中，除了编写源代码，还有相当一部分时间用来编译、运行单元测试、生成文档、打包和部署等烦琐的工作上，这就是构建。而Maven使得软件的构建像全自动流水线一样，只需要一条简单的命令，所有烦琐的步骤都能自动完成，帮助我们标准化构建过程。
+Maven是优秀的构建工具 Maven是跨平台的，它对外提供一致的操作接口，无论在Windows、Linux或是Mac上，都可以使用同样的命令
+我们一直在不停的寻找避免重复的方法。设计的重复、文档的重复、构建的重复，而Maven最大化的消除了构建的重复，抽象了一个完整的构建生命周期模型,并为绝大部分的构建任务提供了已实现的插件，我们也不需要去定义过程和去实现这些过程中的一些任务。
+例如测试，我们不用告诉Maven去测试和如何运行测试，我们只需要遵循Maven的约定编写好测试用例，当我们构建的时候，这些测试会自动运行。
+Maven不仅仅是构建工具 还是一个依赖管理工具和项目信息管理工具。
+依赖管理工具 在这个开源的年代里，几乎任何Java应用都会借用一些第三方的开源类库，这些类库都可通过依赖的方式引入到项目中来。随着依赖的增多，版本不一致、版本冲突、依赖臃肿等问题接踵而来。如果手动解决，那将是十分枯燥的。
+幸运的是Maven提供了一个优秀的解决方案。Maven为全世界的Java开发者提供了一个免费的中央仓库，在其中几乎可以找到任何的流行开源类库，通过一组坐标Maven能找到任何一个Java类库（如jar文件）并自动下载。
+ Maven给这个类库世界引入了经纬，让它们变得有秩序，于是我们借助它来有序地管理依赖，轻松的解决那些繁杂的依赖问题。
+ 项目信息管理工具 Mavne能帮助我们管理原本分散在项目中各个角落的项目信息，包括项目描述、开发者列表、版本控制系统地址、许可证、缺陷管理系统地址等。
+通过Mavne自动生成的站点和一些已有的插件，我们还能轻松获得项目文档、测试报告、静态分析报告、源码版本日志报告等非常具有价值的项目信息。
+使用Mavne的额外好处  Mavne对于项目目录结构、测试用例命名方式等内容都有既定的规则，只要遵循了这些成熟的规则，用户在项目间切换的时候就免去了额外的学习成本，可以说是约定优于配置（Convention Over Configuration）
+ ">
+<meta itemprop="datePublished" content="2020-12-23T09:58:33+08:00" />
+<meta itemprop="dateModified" content="2020-12-23T09:58:33+08:00" />
+<meta itemprop="wordCount" content="22">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="初识Maven"/>
+<meta name="twitter:description" content="什么是Maven Maven被翻译为“专家”或“内行”，也可以被翻译成“知识的积累”。Maven是一跨平台的项目管理工具, 主要服务于基于Java平台的项目构建、依赖管理和项目信息管理
+什么是构建 在我们每天的工作中，除了编写源代码，还有相当一部分时间用来编译、运行单元测试、生成文档、打包和部署等烦琐的工作上，这就是构建。而Maven使得软件的构建像全自动流水线一样，只需要一条简单的命令，所有烦琐的步骤都能自动完成，帮助我们标准化构建过程。
+Maven是优秀的构建工具 Maven是跨平台的，它对外提供一致的操作接口，无论在Windows、Linux或是Mac上，都可以使用同样的命令
+我们一直在不停的寻找避免重复的方法。设计的重复、文档的重复、构建的重复，而Maven最大化的消除了构建的重复，抽象了一个完整的构建生命周期模型,并为绝大部分的构建任务提供了已实现的插件，我们也不需要去定义过程和去实现这些过程中的一些任务。
+例如测试，我们不用告诉Maven去测试和如何运行测试，我们只需要遵循Maven的约定编写好测试用例，当我们构建的时候，这些测试会自动运行。
+Maven不仅仅是构建工具 还是一个依赖管理工具和项目信息管理工具。
+依赖管理工具 在这个开源的年代里，几乎任何Java应用都会借用一些第三方的开源类库，这些类库都可通过依赖的方式引入到项目中来。随着依赖的增多，版本不一致、版本冲突、依赖臃肿等问题接踵而来。如果手动解决，那将是十分枯燥的。
+幸运的是Maven提供了一个优秀的解决方案。Maven为全世界的Java开发者提供了一个免费的中央仓库，在其中几乎可以找到任何的流行开源类库，通过一组坐标Maven能找到任何一个Java类库（如jar文件）并自动下载。
+ Maven给这个类库世界引入了经纬，让它们变得有秩序，于是我们借助它来有序地管理依赖，轻松的解决那些繁杂的依赖问题。
+ 项目信息管理工具 Mavne能帮助我们管理原本分散在项目中各个角落的项目信息，包括项目描述、开发者列表、版本控制系统地址、许可证、缺陷管理系统地址等。
+通过Mavne自动生成的站点和一些已有的插件，我们还能轻松获得项目文档、测试报告、静态分析报告、源码版本日志报告等非常具有价值的项目信息。
+使用Mavne的额外好处  Mavne对于项目目录结构、测试用例命名方式等内容都有既定的规则，只要遵循了这些成熟的规则，用户在项目间切换的时候就免去了额外的学习成本，可以说是约定优于配置（Convention Over Configuration）
+ "/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        小徐的博客
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://xkq-blog.top/posts/%E5%88%9D%E8%AF%86maven/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://xkq-blog.top/posts/%E5%88%9D%E8%AF%86maven/&amp;text=%e5%88%9d%e8%af%86Maven" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://xkq-blog.top/posts/%E5%88%9D%E8%AF%86maven/&amp;title=%e5%88%9d%e8%af%86Maven" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">初识Maven</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-12-23T09:58:33+08:00">December 23, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="什么是maven">什么是<code>Maven</code></h1>
+<p><code>Maven</code>被翻译为<code>“专家”</code>或<code>“内行”</code>，也可以被翻译成<code>“知识的积累”</code>。<code>Maven</code>是一跨平台的项目管理工具,
+主要服务于基于<code>Java</code>平台的项目构建、依赖管理和项目信息管理</p>
+<h2 id="什么是构建">什么是构建</h2>
+<p>在我们每天的工作中，除了编写源代码，还有相当一部分时间用来编译、运行单元测试、生成文档、打包和部署等烦琐的工作上，这就是构建。而<code>Maven</code>使得软件的构建像全自动流水线一样，只需要一条简单的命令，所有烦琐的步骤都能自动完成，帮助我们标准化构建过程。</p>
+<h2 id="maven是优秀的构建工具"><code>Maven</code>是优秀的构建工具</h2>
+<p><code>Maven</code>是跨平台的，它对外提供一致的操作接口，无论在<code>Windows</code>、<code>Linux</code>或是<code>Mac</code>上，都可以使用同样的命令</p>
+<p>我们一直在不停的寻找避免重复的方法。设计的重复、文档的重复、构建的重复，而<code>Maven</code>最大化的消除了构建的重复，抽象了一个完整的构建生命周期模型,并为绝大部分的构建任务提供了已实现的插件，我们也不需要去定义过程和去实现这些过程中的一些任务。</p>
+<p>例如测试，我们不用告诉<code>Maven</code>去测试和如何运行测试，我们只需要遵循<code>Maven</code>的约定编写好测试用例，当我们构建的时候，这些测试会自动运行。</p>
+<h2 id="maven不仅仅是构建工具"><code>Maven</code>不仅仅是构建工具</h2>
+<p>还是一个依赖管理工具和项目信息管理工具。</p>
+<h3 id="依赖管理工具">依赖管理工具</h3>
+<p>在这个开源的年代里，几乎任何<code>Java</code>应用都会借用一些第三方的开源类库，这些类库都可通过依赖的方式引入到项目中来。随着依赖的增多，版本不一致、版本冲突、依赖臃肿等问题接踵而来。如果手动解决，那将是十分枯燥的。</p>
+<p>幸运的是<code>Maven</code>提供了一个优秀的解决方案。<code>Maven</code>为全世界的<code>Java</code>开发者提供了一个免费的中央仓库，在其中几乎可以找到任何的流行开源类库，通过一组坐标<code>Maven</code>能找到任何一个<code>Java</code>类库（如<code>jar</code>文件）并自动下载。</p>
+<blockquote>
+<p><code>Maven</code>给这个类库世界引入了经纬，让它们变得有秩序，于是我们借助它来有序地管理依赖，轻松的解决那些繁杂的依赖问题。</p>
+</blockquote>
+<h3 id="项目信息管理工具">项目信息管理工具</h3>
+<p><code>Mavne</code>能帮助我们管理原本分散在项目中各个角落的项目信息，包括项目描述、开发者列表、版本控制系统地址、许可证、缺陷管理系统地址等。</p>
+<p>通过<code>Mavne</code>自动生成的站点和一些已有的插件，我们还能轻松获得项目文档、测试报告、静态分析报告、源码版本日志报告等非常具有价值的项目信息。</p>
+<h3 id="使用mavne的额外好处">使用<code>Mavne</code>的额外好处</h3>
+<blockquote>
+<p><code>Mavne</code>对于项目目录结构、测试用例命名方式等内容都有既定的规则，只要遵循了这些成熟的规则，用户在项目间切换的时候就免去了额外的学习成本，可以说是约定优于配置（<code>Convention Over Configuration</code>）</p>
+</blockquote>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://xkq-blog.top/" >
+    &copy;  小徐的博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

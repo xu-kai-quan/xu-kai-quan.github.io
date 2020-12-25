@@ -61,7 +61,7 @@
   cd XXX.github.io_generator git init git submodule add https://github.">
 <meta itemprop="datePublished" content="2020-12-22T20:31:10+08:00" />
 <meta itemprop="dateModified" content="2020-12-22T20:31:10+08:00" />
-<meta itemprop="wordCount" content="155">
+<meta itemprop="wordCount" content="165">
 
 
 
@@ -256,6 +256,10 @@ git commit -m <span style="color:#e6db74">&#34;第一次部署&#34;</span>
 <p>①是必须做的</p>
 <p>②不是必须的，当你有自己的域名时可以填上,然后Save就行了</p>
 <p>③ github会在这个位置给你链接，当你或别人访问这个地址时，就可以看到你的博客了</p>
+<ol start="6">
+<li>在你的项目里全局搜索 example.org,替换成你的 GitHub 域名，一般为 XXX.github.io，重新 hugo 并将 public 上传到 GitHub(如果这一步没做好，会出现下面的错误信息)
+<img src="/images/bug.PNG" alt=""></li>
+</ol>
 <h1 id="如何创建第二篇博客">如何创建第二篇博客</h1>
 <ol>
 <li>在 XXX.github.io_generator 目录（注意确保自己不在 public 目录）里运行 hugo new posts/第二篇博客.md</li>

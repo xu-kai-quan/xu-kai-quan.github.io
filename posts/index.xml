@@ -6,7 +6,28 @@
     <description>Recent content in Posts on 小徐的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 24 Jan 2021 11:54:50 +0800</lastBuildDate><atom:link href="https://xkq-blog.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Feb 2021 12:09:14 +0800</lastBuildDate><atom:link href="https://xkq-blog.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTML常用标签</title>
+      <link>https://xkq-blog.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Sun, 21 Feb 2021 12:09:14 +0800</pubDate>
+      
+      <guid>https://xkq-blog.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+      <description>&amp;lt;a&amp;gt;标签 跳转页面是GET请求
+target属性  target=&amp;quot;_blank&amp;quot; 在空页面打开 target=&amp;quot;_self&amp;quot; 在自己页面打开 target=&amp;quot;_parent&amp;quot;在父级页面打开 target=&amp;quot;_top&amp;quot;在最高级页面打开  downloda属性 强制浏览器下载(不是很好用)
+href属性 链接最好是http或https开头
+不加协议，加个//，意思是当前文件是什么协议就用什么协议
+可以是锚点#（无GET请求）也可以是?name=xxx，也可(有GET请求)以是JavaScript伪协议(比如：javascript:;)
+&amp;lt;img&amp;gt;标签 发出GET请求，展示图片
+属性src:图片链接
+属性alt:如果图片加载失败，会显示alt的值
+&amp;lt;table&amp;gt;标签 table中只能有三个标签
+&amp;lt;thead&amp;gt; &amp;lt;tbody&amp;gt; &amp;lt;tfoot&amp;gt;
+用CSS去取消表格间隙
+border-collapse:collapse; border-spacing:0; tfoot tbody thead 顺序是无关的
+可以不写 tbody,浏览器会自动帮你补上，如果不写thead,所有内容会被浏览器加到tbody里面</description>
+    </item>
+    
     <item>
       <title>线程的生命周期和状态转换</title>
       <link>https://xkq-blog.top/posts/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%92%8C%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2/</link>

@@ -6,7 +6,22 @@
     <description>Recent content in Posts on 小徐的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 21 Feb 2021 12:09:14 +0800</lastBuildDate><atom:link href="https://xkq-blog.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Feb 2021 12:01:07 +0800</lastBuildDate><atom:link href="https://xkq-blog.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>浅析URL</title>
+      <link>https://xkq-blog.top/posts/%E6%B5%85%E6%9E%90url/</link>
+      <pubDate>Mon, 22 Feb 2021 12:01:07 +0800</pubDate>
+      
+      <guid>https://xkq-blog.top/posts/%E6%B5%85%E6%9E%90url/</guid>
+      <description>1.URL包含哪几部分，每部分分别有什么作用? URL包含：协议，域名，路径，查询参数，锚点
+协议：是通信计算机双方必须共同遵从的一组约定。 域名：可以说是一个`IP`地址的代称，目的是为了便于记忆后者。 路径：用于访问同一个网站的不同页面，可以请求静态资源 查询后台数据 查询参数：用于访问同一页面中的不同数据 锚点：用于定位页面中的位置，瞄点只与浏览器有关，与服务器无关，所以锚点不会传到服务器  2.DNS 的作用是什么，nslookup命令怎么用 DNS是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库,能够使人更方便地访问互联网。
+nslookup命令用于查询DNS的记录,直接查询返回的是A记录(地址记录)，我们可以指定参数，查询其他记录
+3.IP的作用是什么，ping命令怎么用 IP是网络之间信息传送的协议，可将IP信息包从源设备(例如用户的计算机)传送到目的设备。
+ping用于确定本地主机是否能与另一台主机成功交换(发送与接收)数据包，再根据返回的信息，就可以推断TCP/IP参数是否设置正确，以及运行是否正常、网络是否通畅等。
+4.域名是什么，分别哪几类域名 域名可以说是一个IP地址的代称，目的是为了便于记忆后者。
+域名分为 三级域名 &amp;lt; 二级域名 &amp;lt; 顶级域名</description>
+    </item>
+    
     <item>
       <title>HTML常用标签</title>
       <link>https://xkq-blog.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>

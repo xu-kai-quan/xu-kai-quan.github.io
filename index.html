@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://xkq-blog.top/" />
-<meta property="og:updated_time" content="2021-02-21T12:09:14+08:00" />
+<meta property="og:updated_time" content="2021-02-22T12:01:07+08:00" />
 <meta itemprop="name" content="小徐的博客">
 <meta itemprop="description" content="">
 <meta name="twitter:card" content="summary"/>
@@ -129,6 +129,36 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://xkq-blog.top/posts/%E6%B5%85%E6%9E%90url/" class="color-inherit dim link">
+            浅析URL
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          1.URL包含哪几部分，每部分分别有什么作用? URL包含：协议，域名，路径，查询参数，锚点
+协议：是通信计算机双方必须共同遵从的一组约定。 域名：可以说是一个`IP`地址的代称，目的是为了便于记忆后者。 路径：用于访问同一个网站的不同页面，可以请求静态资源 查询后台数据 查询参数：用于访问同一页面中的不同数据 锚点：用于定位页面中的位置，瞄点只与浏览器有关，与服务器无关，所以锚点不会传到服务器  2.DNS 的作用是什么，nslookup命令怎么用 DNS是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库,能够使人更方便地访问互联网。
+nslookup命令用于查询DNS的记录,直接查询返回的是A记录(地址记录)，我们可以指定参数，查询其他记录
+3.IP的作用是什么，ping命令怎么用 IP是网络之间信息传送的协议，可将IP信息包从源设备(例如用户的计算机)传送到目的设备。
+ping用于确定本地主机是否能与另一台主机成功交换(发送与接收)数据包，再根据返回的信息，就可以推断TCP/IP参数是否设置正确，以及运行是否正常、网络是否通畅等。
+4.域名是什么，分别哪几类域名 域名可以说是一个IP地址的代称，目的是为了便于记忆后者。
+域名分为 三级域名 &lt; 二级域名 &lt; 顶级域名
+        </div>
+          <a href="https://xkq-blog.top/posts/%E6%B5%85%E6%9E%90url/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://xkq-blog.top/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="color-inherit dim link">
             HTML常用标签
             </a>
@@ -191,50 +221,18 @@ border-collapse:collapse; border-spacing:0; tfoot tbody thead 顺序是无关的
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://xkq-blog.top/posts/collection%E4%BD%93%E7%B3%BB%E7%9A%84%E5%B8%B8%E7%94%A8%E7%B1%BB%E5%8F%8A%E5%85%B6%E8%83%8C%E5%90%8E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="color-inherit dim link">
-            Collection体系的常用类及其背后的数据结构
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          概念 集合是特殊的类，它可以存储任意类型的对象，并且长度可变。 集合按照存储结构可以分为两大类，即单列集合Collection和双列集合Map。
-  Collection是单列集合类的根接口，它有两个子接口，分别是List和Set。List是特点是元素有序、可重复。Set的接口是元素无序、不可重复。 List接口的主要实现类有ArrayList和LinkedList，Set接口的主要实现类有HashSet和TreeSet。
-  Map是双列集合类的根接口，用于存储Key、Value映射关系的元素。主要实现类有HashMap和TreeMap。Map中的Set keySet()方法，返回映射中包含键的Set视图，但并不是独立于Map的，keySet的背后还是Map，修改keySet的值，Map也会相应改变。
-  Collection子接口 List   ArrayList内部封装了一个长度可变的数组，当存入的元素超过数组长度时，ArrayList会在内存中分配一个更大的数组，然后把原有的所有元素拷贝过去，因此可以将ArrayList集合看作是一个长度可变的数组。适合用来查找元素，不适合做大量的增、删操作。
-  LinkedList内部维护了一个双向循环列表，对于元素的增、删操作具有很高的效率
-  Set   HashSet根据对象的哈希(单向的映射)值来确定元素在集合中的存储位置，具有良好的存取和查找性能。
-Java世界第一重要约定：判断是否重复用的是equals()方法。
-Java世界第二重要约定：同一个对象必须始终返回相同的hashCode。
-当向HashSet集合中添加一个对象时，首先会调用该对象的hashCode()方法计算对象的哈希值，从而确定元素的存储位置。如果该位置上没有元素，则直接将元素存入，如果该位置上有元素存在，则会调用equals()方法让当前存入的元素依次和该位置上的元素进行比较，如果返回的结果为false就将该元素存入集合，如果返回的结果为true则说明有重复元素，就将该元素舍弃。
-LinkedHashSet是HashSet的子类，使用双向链表来维护内部元素的关系，内部的顺序与存入的顺序一致。
-  TreeSet是以红黑树的方式来存储元素，可以对集合中的元素进行排序，使用Comparable约定，实现快速的查找和插入操作。
-  Map接口   HashMap在Java7+后从链表转向红黑树(一种二叉树，对于每一个根节点，它的每一个右节点都比它小，每一个左节点都比它大)来实现。 HashMap不会出现重复的键，如果存储了相同的键，后存储的值会覆盖原有的值。内部的顺序与存入的顺序不一致。HashMap的线程不安全，可能会出现死循环。在多线程时应用concurrentHashMap
-LinkedHashMap是HashMap的子类，使用双向链表来维护内部元素的关系，内部的顺序与存入的顺序一致。
-  TreeMap是以红黑树的方式来存储元素，可以对集合中的元素进行排序，使用Comparable约定，实现快速的查找和插入操作。
-  
-        </div>
-          <a href="https://xkq-blog.top/posts/collection%E4%BD%93%E7%B3%BB%E7%9A%84%E5%B8%B8%E7%94%A8%E7%B1%BB%E5%8F%8A%E5%85%B6%E8%83%8C%E5%90%8E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://xkq-blog.top/posts/collection%E4%BD%93%E7%B3%BB%E7%9A%84%E5%B8%B8%E7%94%A8%E7%B1%BB%E5%8F%8A%E5%85%B6%E8%83%8C%E5%90%8E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="link black dim">
+              Collection体系的常用类及其背后的数据结构
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://xkq-blog.top/posts/%E5%88%9D%E8%AF%86maven/" class="link black dim">

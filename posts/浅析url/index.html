@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>浅析URL | 小徐的博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="1.URL包含哪几部分，每部分分别有什么作用? URL包含：协议，域名，路径，查询参数，锚点
+协议：是通信计算机双方必须共同遵从的一组约定。 域名：可以说是一个`IP`地址的代称，目的是为了便于记忆后者。 路径：用于访问同一个网站的不同页面，可以请求静态资源 查询后台数据 查询参数：用于访问同一页面中的不同数据 锚点：用于定位页面中的位置，瞄点只与浏览器有关，与服务器无关，所以锚点不会传到服务器  2.DNS 的作用是什么，nslookup命令怎么用 DNS是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库,能够使人更方便地访问互联网。
+nslookup命令用于查询DNS的记录,直接查询返回的是A记录(地址记录)，我们可以指定参数，查询其他记录
+3.IP的作用是什么，ping命令怎么用 IP是网络之间信息传送的协议，可将IP信息包从源设备(例如用户的计算机)传送到目的设备。
+ping用于确定本地主机是否能与另一台主机成功交换(发送与接收)数据包，再根据返回的信息，就可以推断TCP/IP参数是否设置正确，以及运行是否正常、网络是否通畅等。
+4.域名是什么，分别哪几类域名 域名可以说是一个IP地址的代称，目的是为了便于记忆后者。
+域名分为 三级域名 &lt; 二级域名 &lt; 顶级域名">
+    <meta name="generator" content="Hugo 0.79.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="浅析URL" />
+<meta property="og:description" content="1.URL包含哪几部分，每部分分别有什么作用? URL包含：协议，域名，路径，查询参数，锚点
+协议：是通信计算机双方必须共同遵从的一组约定。 域名：可以说是一个`IP`地址的代称，目的是为了便于记忆后者。 路径：用于访问同一个网站的不同页面，可以请求静态资源 查询后台数据 查询参数：用于访问同一页面中的不同数据 锚点：用于定位页面中的位置，瞄点只与浏览器有关，与服务器无关，所以锚点不会传到服务器  2.DNS 的作用是什么，nslookup命令怎么用 DNS是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库,能够使人更方便地访问互联网。
+nslookup命令用于查询DNS的记录,直接查询返回的是A记录(地址记录)，我们可以指定参数，查询其他记录
+3.IP的作用是什么，ping命令怎么用 IP是网络之间信息传送的协议，可将IP信息包从源设备(例如用户的计算机)传送到目的设备。
+ping用于确定本地主机是否能与另一台主机成功交换(发送与接收)数据包，再根据返回的信息，就可以推断TCP/IP参数是否设置正确，以及运行是否正常、网络是否通畅等。
+4.域名是什么，分别哪几类域名 域名可以说是一个IP地址的代称，目的是为了便于记忆后者。
+域名分为 三级域名 &lt; 二级域名 &lt; 顶级域名" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xkq-blog.top/posts/%E6%B5%85%E6%9E%90url/" />
+<meta property="article:published_time" content="2021-02-22T12:01:07+08:00" />
+<meta property="article:modified_time" content="2021-02-22T12:01:07+08:00" />
+<meta itemprop="name" content="浅析URL">
+<meta itemprop="description" content="1.URL包含哪几部分，每部分分别有什么作用? URL包含：协议，域名，路径，查询参数，锚点
+协议：是通信计算机双方必须共同遵从的一组约定。 域名：可以说是一个`IP`地址的代称，目的是为了便于记忆后者。 路径：用于访问同一个网站的不同页面，可以请求静态资源 查询后台数据 查询参数：用于访问同一页面中的不同数据 锚点：用于定位页面中的位置，瞄点只与浏览器有关，与服务器无关，所以锚点不会传到服务器  2.DNS 的作用是什么，nslookup命令怎么用 DNS是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库,能够使人更方便地访问互联网。
+nslookup命令用于查询DNS的记录,直接查询返回的是A记录(地址记录)，我们可以指定参数，查询其他记录
+3.IP的作用是什么，ping命令怎么用 IP是网络之间信息传送的协议，可将IP信息包从源设备(例如用户的计算机)传送到目的设备。
+ping用于确定本地主机是否能与另一台主机成功交换(发送与接收)数据包，再根据返回的信息，就可以推断TCP/IP参数是否设置正确，以及运行是否正常、网络是否通畅等。
+4.域名是什么，分别哪几类域名 域名可以说是一个IP地址的代称，目的是为了便于记忆后者。
+域名分为 三级域名 &lt; 二级域名 &lt; 顶级域名">
+<meta itemprop="datePublished" content="2021-02-22T12:01:07+08:00" />
+<meta itemprop="dateModified" content="2021-02-22T12:01:07+08:00" />
+<meta itemprop="wordCount" content="23">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浅析URL"/>
+<meta name="twitter:description" content="1.URL包含哪几部分，每部分分别有什么作用? URL包含：协议，域名，路径，查询参数，锚点
+协议：是通信计算机双方必须共同遵从的一组约定。 域名：可以说是一个`IP`地址的代称，目的是为了便于记忆后者。 路径：用于访问同一个网站的不同页面，可以请求静态资源 查询后台数据 查询参数：用于访问同一页面中的不同数据 锚点：用于定位页面中的位置，瞄点只与浏览器有关，与服务器无关，所以锚点不会传到服务器  2.DNS 的作用是什么，nslookup命令怎么用 DNS是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库,能够使人更方便地访问互联网。
+nslookup命令用于查询DNS的记录,直接查询返回的是A记录(地址记录)，我们可以指定参数，查询其他记录
+3.IP的作用是什么，ping命令怎么用 IP是网络之间信息传送的协议，可将IP信息包从源设备(例如用户的计算机)传送到目的设备。
+ping用于确定本地主机是否能与另一台主机成功交换(发送与接收)数据包，再根据返回的信息，就可以推断TCP/IP参数是否设置正确，以及运行是否正常、网络是否通畅等。
+4.域名是什么，分别哪几类域名 域名可以说是一个IP地址的代称，目的是为了便于记忆后者。
+域名分为 三级域名 &lt; 二级域名 &lt; 顶级域名"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        小徐的博客
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://xkq-blog.top/posts/%E6%B5%85%E6%9E%90url/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://xkq-blog.top/posts/%E6%B5%85%E6%9E%90url/&amp;text=%e6%b5%85%e6%9e%90URL" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://xkq-blog.top/posts/%E6%B5%85%E6%9E%90url/&amp;title=%e6%b5%85%e6%9e%90URL" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">浅析URL</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-02-22T12:01:07+08:00">February 22, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="1url包含哪几部分每部分分别有什么作用">1.<code>URL</code>包含哪几部分，每部分分别有什么作用?</h2>
+<p><code>URL</code>包含：协议，域名，路径，查询参数，锚点</p>
+<pre><code>协议：是通信计算机双方必须共同遵从的一组约定。
+
+域名：可以说是一个`IP`地址的代称，目的是为了便于记忆后者。
+
+路径：用于访问同一个网站的不同页面，可以请求静态资源 查询后台数据
+
+查询参数：用于访问同一页面中的不同数据
+
+锚点：用于定位页面中的位置，瞄点只与浏览器有关，与服务器无关，所以锚点不会传到服务器
+</code></pre>
+<h2 id="2dns-的作用是什么nslookup命令怎么用">2.<code>DNS</code> 的作用是什么，<code>nslookup</code>命令怎么用</h2>
+<p><code>DNS</code>是互联网的一项服务。它作为将域名和<code>IP</code>地址相互映射的一个分布式数据库,能够使人更方便地访问互联网。</p>
+<p><code>nslookup</code>命令用于查询DNS的记录,直接查询返回的是<code>A</code>记录(地址记录)，我们可以指定参数，查询其他记录</p>
+<h2 id="3ip的作用是什么ping命令怎么用">3.<code>IP</code>的作用是什么，<code>ping</code>命令怎么用</h2>
+<p><code>IP</code>是网络之间信息传送的协议，可将<code>IP</code>信息包从源设备(例如用户的计算机)传送到目的设备。</p>
+<p><code>ping</code>用于确定本地主机是否能与另一台主机成功交换(发送与接收)数据包，再根据返回的信息，就可以推断<code>TCP/IP</code>参数是否设置正确，以及运行是否正常、网络是否通畅等。</p>
+<h2 id="4域名是什么分别哪几类域名">4.域名是什么，分别哪几类域名</h2>
+<p>域名可以说是一个<code>IP</code>地址的代称，目的是为了便于记忆后者。</p>
+<p>域名分为
+三级域名 &lt; 二级域名 &lt; 顶级域名</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://xkq-blog.top/" >
+    &copy;  小徐的博客 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
